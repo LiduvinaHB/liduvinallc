@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LIDUVINA LLC. Empresa dedicada a la creación, comercialización y distribución de productos digitales y contenidos educativos para el mercado hispanohablante." />
+  <title>LIDUVINA LLC | Página institucional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    html, body { margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --bg: #0e0b0d;
+      --cream: #f5efe8;
+      --cream2: rgba(245,239,232,0.85);
+      --cream3: rgba(245,239,232,0.50);
+      --cream4: rgba(245,239,232,0.28);
+      --rose: #d4718a;
+      --rose2: #e8a0b0;
+      --rose3: rgba(212,113,138,0.15);
+      --rose4: rgba(212,113,138,0.08);
+      --gold: #c8a96e;
+      --gold2: #dfc28e;
+      --gold3: rgba(200,169,110,0.20);
+      --border-rose: rgba(212,113,138,0.22);
+      --border-gold: rgba(200,169,110,0.22);
+      --shadow: 0 20px 60px rgba(0,0,0,.60);
+      --radius: 6px;
+      --max: 1060px;
+      --font: 'DM Sans', system-ui, sans-serif;
+      --serif: 'Playfair Display', Georgia, serif;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--cream);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 55% 50% at 80% 25%, rgba(212,113,138,0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 45% 40% at 15% 80%, rgba(200,169,110,0.08) 0%, transparent 65%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 80px 22px;
+      width: 100%;
+    }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0;
+      background: none;
+      border: none;
+      color: var(--cream3);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      margin-bottom: 1.75rem;
+    }
+
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 0 rgba(34,197,94,0.5);
+      flex-shrink: 0;
+      animation: pulse-dot 2.2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+      60%  { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+      100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+    }
+
+    h1 {
+      font-family: var(--serif);
+      margin: 0 0 1.4rem;
+      font-size: clamp(3rem, 9vw, 7rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      color: var(--cream);
+    }
+    h1 .italic { font-style: italic; color: var(--rose2); }
+    h1 .gold   { color: var(--gold2); }
+
+    .hero-tagline {
+      font-size: clamp(0.88rem, 2vw, 1rem);
+      color: var(--cream3);
+      max-width: 580px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── WRAP ── */
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 22px 70px;
+    }
+
+    /* ── GRID PRINCIPAL ── */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: linear-gradient(180deg, rgba(201,168,76,0.07) 0%, rgba(201,168,76,0.04) 100%);
+      border: 1px solid rgba(201,168,76,0.20);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -2px -2px auto -2px;
+      height: 60px;
+      background: linear-gradient(90deg, rgba(212,113,138,0.16), rgba(200,169,110,0.10), rgba(200,169,110,0));
+      filter: blur(2px);
+      opacity: 0.9;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      margin: 0 0 12px;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--cream);
+    }
+
+    p { margin: 0; font-size: 0.88rem; color: var(--cream3); font-weight: 300; line-height: 1.75; }
+    p + p { margin-top: 10px; }
+
+    /* ── INFO LIST ── */
+    ul.info-list { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 8px; }
+    .info-item {
+      padding: 12px 14px;
+      border-radius: 6px;
+      background: rgba(0,0,0,0.30);
+      border: 1px solid rgba(200,169,110,0.14);
+    }
+    .label {
+      display: block;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold2);
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    .value { font-size: 0.88rem; color: var(--cream); word-break: break-word; font-weight: 300; }
+
+    a { color: var(--gold2); font-weight: 500; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── SERVICIOS ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .service-item {
+      padding: 14px;
+      border-radius: 6px;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(201,168,76,0.12);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .service-num {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: rgba(212,113,138,0.35);
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 24px;
+    }
+    .service-item h3 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin: 0 0 4px;
+    }
+    .service-item p { font-size: 0.82rem; }
+
+    /* ── BANNER "APRENDIZAJE SIN LÍMITES" ── */
+    .image-section {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 200px;
+      margin-top: 14px;
+    }
+    .image-section-bg {
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(ellipse 80% 70% at 30% 50%, rgba(212,113,138,0.28) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 40%, rgba(200,169,110,0.22) 0%, transparent 55%),
+        linear-gradient(135deg, #1a0d12 0%, #0e0b0d 50%, #120e08 100%);
+    }
+    .image-section-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(8,8,8,0.45) 0%, rgba(8,8,8,0.15) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .image-section-text {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 300;
+      color: var(--cream);
+      text-align: center;
+      letter-spacing: 0.04em;
+      font-style: italic;
+    }
+    .image-section-text em { color: var(--rose2); font-style: normal; }
+
+    /* ── CÓMO FUNCIONA ── */
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .step-item {
+      padding: 14px;
+      border-radius: 6px;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(200,169,110,0.12);
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+    .step-badge {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(200,169,110,0.20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--gold2);
+      flex-shrink: 0;
+    }
+    .step-item p { font-size: 0.84rem; }
+
+    /* ── CONTACTO ── */
+    .contact-card { margin-top: 14px; }
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(200,169,110,0.08);
+    }
+    .contact-row:last-child { border-bottom: none; }
+    .contact-icon { font-size: 1rem; color: var(--gold2); flex-shrink: 0; width: 20px; text-align: center; margin-top: 2px; }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(200,169,110,0.12);
+      text-align: center;
+      font-size: 12px;
+      color: var(--cream4);
+      font-weight: 300;
+    }
+    footer a { color: var(--cream4); }
+    footer a:hover { color: var(--rose2); }
+    .footer-legal { margin-top: 10px; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+
+    /* ── LEGAL ── */
+    .legal-page { display: none; max-width: 760px; margin: 0 auto; padding: 80px 22px 60px; }
+    .legal-page.active { display: block; }
+    .legal-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--rose2); text-decoration: none; margin-bottom: 2rem;
+    }
+    .legal-page h1 { font-size: 2rem; margin-bottom: 0.4rem; }
+    .legal-date { font-size: 0.72rem; letter-spacing: 0.08em; color: var(--cream4); margin-bottom: 2.5rem; }
+    .legal-page h2 {
+      font-size: 1rem; font-weight: 500; margin: 2rem 0 0.5rem;
+      color: var(--gold2); font-family: var(--font); letter-spacing: 0.04em;
+    }
+    .legal-page p, .legal-page li { font-size: 0.86rem; line-height: 1.8; color: var(--cream3); font-weight: 300; margin-bottom: 0.6rem; }
+    .legal-page ul { margin: 0.5rem 0 1rem; gap: 6px; list-style: none; padding: 0; display: grid; }
+    .legal-page li { background: rgba(0,0,0,0.2); border: 1px solid rgba(200,169,110,0.10); padding: 8px 12px; border-radius: 4px; }
+
+    @media (min-width: 760px) {
+      .wrap { padding: 0 22px 80px; }
+      .grid { grid-template-columns: 1.15fr 0.85fr; gap: 16px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .image-section { height: 240px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="main-site">
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="badge">
+        <span class="dot"></span>
+        Página institucional · Liduvina LLC
+      </div>
+      <h1>
+        LIDU<span class="italic">VINA</span><br/>
+        <span class="gold">LLC</span>
+      </h1>
+      <p class="hero-tagline">
+        Empresa dedicada a la creación, comercialización y distribución de productos digitales y contenidos educativos para el mercado hispanohablante.
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <div class="grid">
+
+      <article class="card">
+        <h2>Quiénes somos</h2>
+        <p>LIDUVINA LLC es una empresa de educación digital formalmente registrada en el Estado de Wyoming, Estados Unidos. Nos especializamos en el desarrollo, comercialización y distribución de productos digitales — ebooks, guías, recursos descargables y programas de aprendizaje — diseñados para el mercado hispanohablante de Latinoamérica y España.</p>
+        <p>Nuestra misión es democratizar el acceso al conocimiento práctico, ofreciendo contenido de alta calidad a precios accesibles, con entrega 100% digital e inmediata.</p>
+      </article>
+
+      <aside class="card">
+        <h2>Información de la empresa</h2>
+        <ul class="info-list">
+          <li class="info-item">
+            <span class="label">Nombre legal</span>
+            <span class="value">LIDUVINA LLC</span>
+          </li>
+          <li class="info-item">
+            <span class="label">EIN</span>
+            <span class="value">42-3260531</span>
+          </li>
+          <li class="info-item">
+            <span class="label">Estado de registro</span>
+            <span class="value">Wyoming, United States</span>
+          </li>
+          <li class="info-item">
+            <span class="label">Agente registrado</span>
+            <span class="value">Registered Agents Inc<br/>30 N Gould St Ste R, Sheridan, WY 82801</span>
+          </li>
+          <li class="info-item">
+            <span class="label">Email de contacto</span>
+            <span class="value"><a href="mailto:info@liduvinallc.com">info@liduvinallc.com</a></span>
+          </li>
+          <li class="info-item">
+            <span class="label">Representante</span>
+            <span class="value">Adriana Alejandra Herrero</span>
+          </li>
+        </ul>
+      </aside>
+
+    </div>
+
+    <!-- SERVICIOS -->
+    <div class="card" style="margin-top:14px;">
+      <h2>Servicios</h2>
+      <div class="services-grid">
+        <div class="service-item">
+          <span class="service-num">01</span>
+          <div>
+            <h3>Ebooks & Guías PDF</h3>
+            <p>Publicaciones digitales descargables sobre educación, bienestar y habilidades prácticas. Entrega inmediata post-compra.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <span class="service-num">02</span>
+          <div>
+            <h3>Programas Educativos</h3>
+            <p>Contenidos de aprendizaje orientados a resultados concretos para el mercado hispanohablante.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <span class="service-num">03</span>
+          <div>
+            <h3>Recursos Descargables</h3>
+            <p>Materiales digitales de apoyo: guías, ejercicios y contenidos complementarios de entrega inmediata.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <span class="service-num">04</span>
+          <div>
+            <h3>Infoproductos</h3>
+            <p>Productos de conocimiento digital para emprendedores y profesionales del mercado hispanohablante.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BANNER APRENDIZAJE SIN LÍMITES -->
+    <div class="image-section">
+      <div class="image-section-bg"></div>
+      <div class="image-section-overlay">
+        <div class="image-section-text">Aprendizaje sin <em>límites</em></div>
+      </div>
+    </div>
+
+    <!-- CÓMO FUNCIONA -->
+    <div class="card" style="margin-top:14px;">
+      <h2>Cómo funciona</h2>
+      <div class="steps">
+        <div class="step-item">
+          <div class="step-badge">I</div>
+          <p><strong style="color:var(--cream);font-weight:500;">Descubrimiento</strong> — El cliente encuentra el producto a través de nuestros canales digitales y páginas de venta.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-badge">II</div>
+          <p><strong style="color:var(--cream);font-weight:500;">Compra segura</strong> — Proceso de pago con tarjeta de crédito o débito a través de plataformas certificadas.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-badge">III</div>
+          <p><strong style="color:var(--cream);font-weight:500;">Entrega inmediata</strong> — El producto digital es enviado automáticamente al email del comprador al instante.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-badge">IV</div>
+          <p><strong style="color:var(--cream);font-weight:500;">Soporte</strong> — Acompañamiento post-compra vía email: info@liduvinallc.com</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="card contact-card">
+      <h2>Contacto</h2>
+      <div class="contact-row">
+        <span class="contact-icon">✉️</span>
+        <div>
+          <span class="label">Email</span>
+          <span class="value"><a href="mailto:info@liduvinallc.com">info@liduvinallc.com</a></span>
+        </div>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">🏛️</span>
+        <div>
+          <span class="label">Entidad legal</span>
+          <span class="value">LIDUVINA LLC · Wyoming, United States · EIN 42-3260531</span>
+        </div>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">📍</span>
+        <div>
+          <span class="label">Agente registrado</span>
+          <span class="value">Registered Agents Inc · 30 N Gould St Ste R, Sheridan, WY 82801</span>
+        </div>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">⏱️</span>
+        <div>
+          <span class="label">Tiempo de respuesta</span>
+          <span class="value">Respondemos dentro de 24–48 horas hábiles</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 LIDUVINA LLC · Wyoming, United States · All rights reserved.</p>
+      <p style="margin-top:6px;">EIN: 42-3260531 · Registered Agents Inc · 30 N Gould St Ste R, Sheridan, WY 82801</p>
+      <div class="footer-legal">
+        <a href="#" onclick="showLegal('privacy-page'); return false;">Política de Privacidad</a>
+        <a href="#" onclick="showLegal('terms-page'); return false;">Términos y Condiciones</a>
+        <a href="#" onclick="showLegal('refund-page'); return false;">Política de Reembolsos</a>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+
+<!-- PRIVACIDAD -->
+<div id="privacy-page" class="legal-page">
+  <a href="#" class="legal-back" onclick="showMain(); return false;">← Volver al inicio</a>
+  <h1>Política de Privacidad</h1>
+  <p class="legal-date">Última actualización: Junio 2026 · LIDUVINA LLC · EIN 42-3260531</p>
+  <h2>1. Información que recopilamos</h2>
+  <p>LIDUVINA LLC recopila información personal únicamente cuando es necesaria para procesar una transacción o responder a una consulta. Esto puede incluir nombre completo, dirección de correo electrónico, datos de facturación (procesados por terceros como Stripe) e información de uso del producto adquirido.</p>
+  <h2>2. Uso de la información</h2>
+  <p>La información recopilada se utiliza exclusivamente para procesar y completar transacciones de compra, entregar los productos digitales adquiridos, responder consultas de soporte y cumplir con obligaciones legales aplicables. No vendemos, alquilamos ni compartimos información personal con terceros con fines comerciales.</p>
+  <h2>3. Procesamiento de pagos</h2>
+  <p>Todos los pagos son procesados de forma segura por Stripe, Inc. LIDUVINA LLC no almacena datos de tarjetas de crédito ni débito. El procesamiento de datos de pago está sujeto a la Política de Privacidad de Stripe disponible en stripe.com/privacy.</p>
+  <h2>4. Cookies</h2>
+  <p>Este sitio web puede utilizar cookies técnicas necesarias para su funcionamiento. No utilizamos cookies de seguimiento de terceros con fines publicitarios sin el consentimiento del usuario.</p>
+  <h2>5. Seguridad</h2>
+  <p>Implementamos medidas técnicas y organizativas razonables para proteger la información personal contra accesos no autorizados, pérdida o alteración.</p>
+  <h2>6. Sus derechos</h2>
+  <p>Tiene derecho a acceder, corregir o solicitar la eliminación de su información personal. Para ejercer estos derechos: <a href="mailto:info@liduvinallc.com">info@liduvinallc.com</a></p>
+  <h2>7. Ley aplicable</h2>
+  <p>Esta política se rige por las leyes del Estado de Wyoming, Estados Unidos de América.</p>
+</div>
+
+<!-- TÉRMINOS -->
+<div id="terms-page" class="legal-page">
+  <a href="#" class="legal-back" onclick="showMain(); return false;">← Volver al inicio</a>
+  <h1>Términos y Condiciones</h1>
+  <p class="legal-date">Última actualización: Junio 2026 · LIDUVINA LLC · EIN 42-3260531</p>
+  <h2>1. Aceptación de términos</h2>
+  <p>Al acceder o adquirir cualquier producto de LIDUVINA LLC, usted acepta estos Términos y Condiciones en su totalidad.</p>
+  <h2>2. Productos digitales</h2>
+  <p>Todos los productos comercializados son de naturaleza digital (ebooks, PDFs, cursos, recursos descargables). La entrega se realiza de forma electrónica, generalmente de manera inmediata tras la confirmación del pago.</p>
+  <h2>3. Licencia de uso</h2>
+  <p>Al adquirir un producto, el cliente recibe una licencia personal, no exclusiva e intransferible para su uso individual. Queda prohibida la reproducción, redistribución, reventa o cualquier uso comercial del contenido sin autorización expresa por escrito.</p>
+  <h2>4. Procesamiento de pagos</h2>
+  <p>Los pagos son procesados de forma segura a través de Stripe, Inc. Los precios están expresados en dólares estadounidenses (USD) salvo indicación contraria. LIDUVINA LLC no almacena datos de tarjetas de pago.</p>
+  <h2>5. Política de reembolsos</h2>
+  <p>Dado que nuestros productos son de naturaleza digital y se entregan de forma inmediata, no ofrecemos reembolsos una vez que el archivo ha sido entregado o el acceso ha sido otorgado. Ver Política de Reembolsos para casos excepcionales.</p>
+  <h2>6. Limitación de responsabilidad</h2>
+  <p>LIDUVINA LLC no garantiza resultados específicos derivados del uso de sus productos. En ningún caso nuestra responsabilidad excederá el monto pagado por el producto en cuestión.</p>
+  <h2>7. Propiedad intelectual</h2>
+  <p>Todo el contenido de nuestros productos y sitio web es propiedad intelectual de LIDUVINA LLC o sus licenciantes. Todos los derechos están reservados.</p>
+  <h2>8. Ley aplicable</h2>
+  <p>Estos términos se rigen por las leyes del Estado de Wyoming, Estados Unidos de América.</p>
+</div>
+
+<!-- REEMBOLSOS -->
+<div id="refund-page" class="legal-page">
+  <a href="#" class="legal-back" onclick="showMain(); return false;">← Volver al inicio</a>
+  <h1>Política de Reembolsos</h1>
+  <p class="legal-date">Última actualización: Junio 2026 · LIDUVINA LLC · EIN 42-3260531</p>
+  <h2>Naturaleza de los productos</h2>
+  <p>LIDUVINA LLC comercializa exclusivamente productos digitales (ebooks, PDFs, recursos descargables, cursos). Dado que la entrega es inmediata y electrónica, la naturaleza del producto no permite devolución física.</p>
+  <h2>Política general</h2>
+  <p>No ofrecemos reembolsos una vez que el producto digital ha sido entregado al correo electrónico del comprador o el acceso ha sido activado.</p>
+  <h2>Excepciones</h2>
+  <ul>
+    <li>Error técnico comprobable que impidió la descarga o acceso al producto.</li>
+    <li>Entrega de un producto diferente al adquirido (error de nuestro sistema).</li>
+    <li>Cargo duplicado o error de facturación verificable.</li>
+  </ul>
+  <h2>Cómo solicitar una evaluación</h2>
+  <p>Contactar a <a href="mailto:info@liduvinallc.com">info@liduvinallc.com</a> dentro de los 7 días posteriores a la compra con nombre completo, número de transacción y descripción del problema. Respondemos en 48 horas hábiles.</p>
+  <h2>Chargebacks</h2>
+  <p>Le pedimos que nos contacte directamente antes de iniciar un chargeback. Estamos comprometidos a resolver cualquier inconveniente de forma directa y rápida.</p>
+</div>
+
+<script>
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  const hero = canvas.parentElement;
+  let W, H, nodes, raf;
+  const ROSE = [212, 113, 138];
+  const GOLD = [200, 169, 110];
+
+  function mix(a, b, t) { return a.map((v, i) => Math.round(v + (b[i] - v) * t)); }
+
+  function resize() {
+    W = canvas.width  = hero.offsetWidth;
+    H = canvas.height = hero.offsetHeight;
+    build();
+  }
+
+  function build() {
+    const n = Math.max(45, Math.floor(W * H / 16000));
+    nodes = Array.from({ length: n }, () => ({
+      x: Math.random() * W, y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.28,
+      vy: (Math.random() - 0.5) * 0.28,
+      r: Math.random() * 1.6 + 0.5,
+      phase: Math.random() * Math.PI * 2,
+    }));
+  }
+
+  function draw(ts) {
+    ctx.clearRect(0, 0, W, H);
+    const t = ts * 0.001;
+    const DIST = 165;
+
+    for (let i = 0; i < nodes.length; i++) {
+      const a = nodes[i];
+      a.x += a.vx; a.y += a.vy;
+      if (a.x < 0) a.x = W; if (a.x > W) a.x = 0;
+      if (a.y < 0) a.y = H; if (a.y > H) a.y = 0;
+
+      const pulse = 0.5 + 0.5 * Math.sin(t * 0.85 + a.phase);
+      const col = mix(ROSE, GOLD, a.x / W);
+
+      // glow
+      const grd = ctx.createRadialGradient(a.x, a.y, 0, a.x, a.y, a.r * 7);
+      grd.addColorStop(0, `rgba(${col[0]},${col[1]},${col[2]},${0.50 * pulse})`);
+      grd.addColorStop(1, `rgba(${col[0]},${col[1]},${col[2]},0)`);
+      ctx.beginPath();
+      ctx.arc(a.x, a.y, a.r * 7, 0, Math.PI * 2);
+      ctx.fillStyle = grd;
+      ctx.fill();
+
+      // punto
+      ctx.beginPath();
+      ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${0.90 * pulse})`;
+      ctx.fill();
+
+      // líneas
+      for (let j = i + 1; j < nodes.length; j++) {
+        const b = nodes[j];
+        const dx = b.x - a.x, dy = b.y - a.y;
+        const d = Math.sqrt(dx*dx + dy*dy);
+        if (d > DIST) continue;
+        const alpha = (1 - d / DIST) * 0.42 * pulse;
+        const lc = mix(ROSE, GOLD, (a.x + b.x) * 0.5 / W);
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.strokeStyle = `rgba(${lc[0]},${lc[1]},${lc[2]},${alpha})`;
+        ctx.lineWidth = 0.65;
+        ctx.stroke();
+      }
+    }
+    raf = requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  raf = requestAnimationFrame(draw);
+})();
+
+function showLegal(id) {
+  document.getElementById('main-site').style.display = 'none';
+  document.querySelectorAll('.legal-page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+function showMain() {
+  document.getElementById('main-site').style.display = 'block';
+  document.querySelectorAll('.legal-page').forEach(p => p.classList.remove('active'));
+  window.scrollTo(0, 0);
+}
+</script>
+
+</body>
+</html>
